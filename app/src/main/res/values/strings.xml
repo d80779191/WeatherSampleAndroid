@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WeatherSample</string>
+    <string name="tab_current_city">Current City</string>
+    <string name="tab_weekly_report">Weekly Report</string>
+    <string name="dialog_no_internet_title">No Internet</string>
+    <string name="dialog_no_internet_msg">Please check your internet connection and try again.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_select_city_title">Select a City</string>
+    <string name="city_taipei">Taipei</string>
+    <string name="city_new_taipei">New Taipei</string>
+    <string name="city_taoyuan">Taoyuan</string>
+    <string name="city_taichung">Taichung</string>
+    <string name="city_tainan">Tainan</string>
+    <string name="city_kaohsiung">Kaohsiung</string>
+    <string name="loading_current_weather">Loading Current Weather...</string>
+    <string name="loading_weekly_weather">Loading Weekly Weather...</string>
+    <string name="current_location">Current Location</string>
+    <string name="error_load_failed">Failed to load weather data</string>
+    <string name="weather_temp_format">%1$s\nTemp: %2$.1f°C\nWind: %3$.1f km/h</string>
+    <string name="weather_forecast_title">%1$s 7-Day Forecast:\n</string>
+    <string name="weather_forecast_day">%1$s: %2$.1f°C ~ %3$.1f°C\n</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherSample</string>
+    <string name="tab_current_city">目前的城市</string>
+    <string name="tab_weekly_report">一週天氣</string>
+    <string name="dialog_no_internet_title">無網路連線</string>
+    <string name="dialog_no_internet_msg">請檢查您的網路連線並重試。</string>
+    <string name="dialog_ok">確定</string>
+    <string name="dialog_select_city_title">選擇城市</string>
+    <string name="city_taipei">台北市</string>
+    <string name="city_new_taipei">新北市</string>
+    <string name="city_taoyuan">桃園市</string>
+    <string name="city_taichung">台中市</string>
+    <string name="city_tainan">台南市</string>
+    <string name="city_kaohsiung">高雄市</string>
+    <string name="loading_current_weather">載入目前天氣中...</string>
+    <string name="loading_weekly_weather">載入一週天氣中...</string>
+    <string name="current_location">目前位置</string>
+    <string name="error_load_failed">載入天氣資料失敗</string>
+    <string name="weather_temp_format">%1$s\n溫度： %2$.1f°C\n風速： %3$.1f km/h</string>
+    <string name="weather_forecast_title">%1$s 七天預報：\n</string>
+    <string name="weather_forecast_day">%1$s: %2$.1f°C ~ %3$.1f°C\n</string>
+</resources>
