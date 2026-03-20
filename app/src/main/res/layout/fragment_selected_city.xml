@@ -46,7 +46,7 @@
                     android:id="@+id/tv_current_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.currentWeatherDetails.temperature}"
+                    android:text="@{viewModel.selectedWeatherDetails.temperature}"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp" />
 
@@ -54,7 +54,7 @@
                     android:id="@+id/tv_current_wind_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.currentWeatherDetails.windSpeed}"
+                    android:text="@{viewModel.selectedWeatherDetails.windSpeed}"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp" />
 
@@ -62,7 +62,7 @@
                     android:id="@+id/tv_current_pop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.currentWeatherDetails.pop}"
+                    android:text="@{viewModel.selectedWeatherDetails.pop}"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp" />
 
@@ -70,7 +70,7 @@
                     android:id="@+id/tv_current_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.currentWeatherDetails.description}"
+                    android:text="@{viewModel.selectedWeatherDetails.description}"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
@@ -125,13 +125,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[0].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[0].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[0].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[0].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -145,13 +145,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[1].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[1].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[1].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[1].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -165,13 +165,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[2].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[2].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[2].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[2].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -185,13 +185,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[3].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[3].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[3].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[3].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -205,13 +205,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[4].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[4].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[4].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[4].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -225,13 +225,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[5].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[5].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[5].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[5].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>
@@ -245,13 +245,13 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[6].formattedDate}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[6].formattedDate}"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@{viewModel.currentWeeklyForecast[6].weatherDescription}"
+                                    android:text="@{viewModel.selectedWeeklyForecast[6].weatherDescription}"
                                     android:textSize="12sp"
                                     android:layout_marginTop="2dp" />
                             </LinearLayout>

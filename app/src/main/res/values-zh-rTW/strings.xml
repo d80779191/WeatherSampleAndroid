@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">WeatherSample</string>
     <string name="tab_current_city">目前的城市</string>
-    <string name="tab_weekly_report">一週天氣</string>
+    <string name="tab_selected_city">選擇城市</string>
     <string name="dialog_no_internet_title">無網路連線</string>
     <string name="dialog_no_internet_msg">請檢查您的網路連線並重試。</string>
     <string name="dialog_ok">確定</string>
@@ -14,10 +14,32 @@
     <string name="city_tainan">台南市</string>
     <string name="city_kaohsiung">高雄市</string>
     <string name="loading_current_weather">載入目前天氣中...</string>
-    <string name="loading_weekly_weather">載入一週天氣中...</string>
+    <string name="loading_selected_city_weather">載入所選城市天氣中...</string>
     <string name="current_location">目前位置</string>
     <string name="error_load_failed">載入天氣資料失敗</string>
     <string name="weather_temp_format">%1$s\n溫度： %2$.1f°C\n風速： %3$.1f km/h</string>
     <string name="weather_forecast_title">%1$s 七天預報：\n</string>
     <string name="weather_forecast_day">%1$s: %2$.1f°C ~ %3$.1f°C\n</string>
+
+    <string name="weather_clear">晴天</string>
+    <string name="weather_cloudy">陰天</string>
+    <string name="weather_foggy">起霧</string>
+    <string name="weather_drizzle">毛毛雨</string>
+    <string name="weather_rainy">雨天</string>
+    <string name="weather_snowy">下雪</string>
+    <string name="weather_thunderstorm">雷雨</string>
+    <string name="weather_unknown">未知</string>
+
+    <string name="label_temperature">溫度：%1$s</string>
+    <string name="label_wind_speed">風速：%1$s km/h</string>
+    <string name="label_weather_desc">天氣：%1$s</string>
+    <string name="label_pop">降雨機率：%1$d%%</string>
+
+    <string name="current_weather_title">目前天氣</string>
+    <string name="weekly_forecast_title">未來一週天氣</string>
+    <string name="error_title">錯誤</string>
+    <string name="current_location_format">目前位置：%1$s</string>
+    <string name="unknown_city">未知</string>
+    <string name="btn_change_city">更換城市</string>
+
 </resources>

@@ -1,12 +1,14 @@
 package com.weathersample
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.weathersample.databinding.FragmentCurrentCityBinding
+import com.weathersample.databinding.FragmentSelectedCityBinding
 
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -15,20 +17,21 @@ import android.graphics.Color
 import com.github.mikephil.charting.components.XAxis
 
 /**
- * 負責顯示「目前位置 / 第一分頁」的視圖控制器。
- * 利用綁定 MainViewModel 中的 currentWeeklyForecast 變數，動態渲染折線圖 (LineChart)。
+ * 負責顯示「選擇城市 / 第二分頁」的視圖控制器。
+ * 使用者自選城市後會觸發 MainActivity.showCitySelectionDialogForSelectedCity() 更新資料，
+ * 並在此片段中透過 ViewModel 的 selectedWeeklyForecast 動態渲染天氣資料與折線圖。
  */
-class CurrentCityFragment : Fragment() {
+class SelectedCityFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
-    private var _binding: FragmentCurrentCityBinding? = null
+    private var _binding: FragmentSelectedCityBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCurrentCityBinding.inflate(inflater, container, false)
+        _binding = FragmentSelectedCityBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
@@ -39,7 +42,7 @@ class CurrentCityFragment : Fragment() {
         
         setupChart()
 
-        viewModel.currentWeeklyForecast.observe(viewLifecycleOwner) { forecast ->
+        viewModel.selectedWeeklyForecast.observe(viewLifecycleOwner) { forecast ->
             if (forecast.isNotEmpty()) {
                 val entriesHigh = ArrayList<Entry>()
                 val entriesLow = ArrayList<Entry>()
@@ -100,5 +103,52 @@ class CurrentCityFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        checkAndShowCitySelection()
+    }
+
+    private fun checkAndShowCitySelection() {
+        val sharedPrefs = requireContext().getSharedPreferences("WeatherPrefs", Context.MODE_PRIVATE)
+        val savedCityName = sharedPrefs.getString("selected_city_name", null)
+
+        if (savedCityName == null) {
+            showCitySelectionDialog()
+        }
+    }
+
+    private fun showCitySelectionDialog() {
+        val context = requireContext()
+        val cities = arrayOf(
+            Pair(getString(R.string.city_taipei), Pair(25.0330, 121.5654)),
+            Pair(getString(R.string.city_new_taipei), Pair(25.0112, 121.4646)),
+            Pair(getString(R.string.city_taoyuan), Pair(24.9936, 121.3010)),
+            Pair(getString(R.string.city_taichung), Pair(24.1477, 120.6736)),
+            Pair(getString(R.string.city_tainan), Pair(22.9999, 120.2269)),
+            Pair(getString(R.string.city_kaohsiung), Pair(22.6273, 120.3014))
+        )
+        val cityNames = cities.map { it.first }.toTypedArray()
+
+        AlertDialog.Builder(context)
+            .setTitle(getString(R.string.dialog_select_city_title))
+            .setItems(cityNames) { _, which ->
+                val selectedCity = cities[which]
+                val cityName = selectedCity.first
+                val lat = selectedCity.second.first
+                val lon = selectedCity.second.second
+
+                val sharedPrefs = context.getSharedPreferences("WeatherPrefs", Context.MODE_PRIVATE)
+                sharedPrefs.edit()
+                    .putString("selected_city_name", cityName)
+                    .putFloat("selected_city_lat", lat.toFloat())
+                    .putFloat("selected_city_lon", lon.toFloat())
+                    .apply()
+
+                viewModel.fetchSelectedCityWeather(lat, lon, cityName)
+            }
+            .setCancelable(false)
+            .show()
     }
 }

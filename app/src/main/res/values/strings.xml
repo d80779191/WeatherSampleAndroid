@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WeatherSample</string>
     <string name="tab_current_city">Current City</string>
-    <string name="tab_weekly_report">Weekly Report</string>
+    <string name="tab_selected_city">Selected City</string>
     <string name="dialog_no_internet_title">No Internet</string>
     <string name="dialog_no_internet_msg">Please check your internet connection and try again.</string>
     <string name="dialog_ok">OK</string>
@@ -13,10 +13,32 @@
     <string name="city_tainan">Tainan</string>
     <string name="city_kaohsiung">Kaohsiung</string>
     <string name="loading_current_weather">Loading Current Weather...</string>
-    <string name="loading_weekly_weather">Loading Weekly Weather...</string>
+    <string name="loading_selected_city_weather">Loading Selected City Weather...</string>
     <string name="current_location">Current Location</string>
     <string name="error_load_failed">Failed to load weather data</string>
     <string name="weather_temp_format">%1$s\nTemp: %2$.1f°C\nWind: %3$.1f km/h</string>
     <string name="weather_forecast_title">%1$s 7-Day Forecast:\n</string>
     <string name="weather_forecast_day">%1$s: %2$.1f°C ~ %3$.1f°C\n</string>
+    
+    <string name="weather_clear">Clear</string>
+    <string name="weather_cloudy">Cloudy</string>
+    <string name="weather_foggy">Foggy</string>
+    <string name="weather_drizzle">Drizzle</string>
+    <string name="weather_rainy">Rainy</string>
+    <string name="weather_snowy">Snowy</string>
+    <string name="weather_thunderstorm">Thunderstorm</string>
+    <string name="weather_unknown">Unknown</string>
+
+    <string name="label_temperature">Temperature: %1$s</string>
+    <string name="label_wind_speed">Wind Speed: %1$s km/h</string>
+    <string name="label_weather_desc">Weather Description: %1$s</string>
+    <string name="label_pop">Precipitation Probability: %1$d%%</string>
+
+    <string name="current_weather_title">Current Weather</string>
+    <string name="weekly_forecast_title">Weekly Forecast</string>
+    <string name="error_title">Error</string>
+    <string name="current_location_format">Current Location: %1$s</string>
+    <string name="unknown_city">Unknown</string>
+    <string name="btn_change_city">Change City</string>
+
 </resources>
